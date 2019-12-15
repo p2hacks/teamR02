@@ -1,0 +1,109 @@
+﻿{% load static%}　
+<!DOCTYPE html> 
+<html lang="ja"> 
+<head> 
+<meta charset=utf-8>
+    
+<title>冷蔵庫</title>
+    
+<style>
+#fruits {
+	/*単なるスタイリング*/
+height:100px auto; margin:auto; margin-bottom:0; background-color:#FF9966; border:1px solid #cc3333; overflow-y: scroll;
+box-shadow: 0 3px 4px rgba(0, 0, 0, 0.32);
+}
+#dropbox {
+	/*単なるスタイリング*/
+	width:530px; height:100px; margin:auto; margin-bottom:0; background-color:#f5f5f5; border:2px solid #c0c0c0;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
+	/*以下はwebkit系ブラウザでドラッグ＆ドロップを動かすための指定（ブラウザのサポートが進めば、必要なくなると思われます）*/
+	-khtml-user-drag: element;
+}
+</style>
+    
+<script>
+/***** ドラッグ開始時の処理 *****/
+function f_dragstart(event){
+	//ドラッグするデータのid名をDataTransferオブジェクトにセット
+	event.dataTransfer.setData("text", event.target.id);
+}
+
+/***** ドラッグ要素がドロップ要素に重なっている間の処理 *****/
+function f_dragover(event){
+	//dragoverイベントをキャンセルして、ドロップ先の要素がドロップを受け付けるようにする
+	event.preventDefault();
+}
+
+/***** ドロップ時の処理 *****/
+function f_drop(event){
+	//ドラッグされたデータのid名をDataTransferオブジェクトから取得
+	var id_name = event.dataTransfer.getData("text");
+	//id名からドラッグされた要素を取得
+	var drag_elm =document.getElementById(id_name);
+	//ドロップ先にドラッグされた要素を追加
+	event.currentTarget.appendChild(drag_elm);
+    //エラー回避のため、ドロップ処理の最後にdropイベントをキャンセルしておく
+	event.preventDefault();
+}
+</script>
+</head>
+<body>
+<br><br><br><br>
+<div id="dropbox" ondragover="f_dragover(event)" ondrop="f_drop(event)">
+</div>
+    <div id="dropbox" ondragover="f_dragover(event)" ondrop="f_drop(event)">
+</div>
+    <div id="dropbox" ondragover="f_dragover(event)" ondrop="f_drop(event)">
+</div>
+    <div id="dropbox" ondragover="f_dragover(event)" ondrop="f_drop(event)">
+</div>
+    
+<a href="http://localhost:8000/handy/"> トップへ</a>
+  
+
+
+
+<br><br><br><br>
+    <div id="fruits" ondragover="f_dragover(event)" ondrop="f_drop(event)">
+    <img src="{% static "pi-mann.png"%}" id="pi-mann" alt="ぴーまん" draggable="true" ondragstart="f_dragstart(event)" width="100px" height="100px">
+    <img src="{% static "apple.png"%}" id="apple" alt="りんご" draggable="true" ondragstart="f_dragstart(event)" width="100px" height="100px">
+    <img src="{% static "bata-.png"%}" id="bata-" alt="ばたー" draggable="true" ondragstart="f_dragstart(event)" width="100px" height="100px">
+    <img src="{% static "be-konn.png"%}" id="be-konn" alt="べーこん" draggable="true" ondragstart="f_dragstart(event)" width="100px" height="100px">
+    <img src="{% static "burokkori-.png"%}" id="burokkori-" alt="ブロッコリー" draggable="true" ondragstart="f_dragstart(event)" width="100px" height="100px">
+    <img src="{% static "carrot.png"%}" id="carrot" alt="キャロット" draggable="true" ondragstart="f_dragstart(event)" width="100px" height="100px">
+    <img src="{% static "chiken.png"%}" id="chiken" alt="ちきん" draggable="true" ondragstart="f_dragstart(event)" width="100px" height="100px">
+    <img src="{% static "hamu.png"%}" id="hamu" alt="はむ" draggable="true" ondragstart="f_dragstart(event)" width="100px" height="100px">
+    <img src="{% static "ketchup.png"%}" id="ketchup" alt="けちゃっぷ" draggable="true" ondragstart="f_dragstart(event)" width="100px" height="100px">
+    <img src="{% static "kyabetu.png"%}" id="kyabetu" alt="きゃべつ" draggable="true" ondragstart="f_dragstart(event)" width="100px" height="100px">
+    <img src="{% static "mayone-zu.png"%}" id="mayone-zu" alt="まよねーず" draggable="true" ondragstart="f_dragstart(event)" width="100px" height="100px">
+    <img src="{% static "meat.png"%}" id="meat" alt="にく" draggable="true" ondragstart="f_dragstart(event)" width="100px" height="100px">
+    <img src="{% static "milk.png"%}" id="milk" alt="ぎゅうにゅう" draggable="true" ondragstart="f_dragstart(event)" width="100px" height="100px">
+    <img src="{% static "mushroom.png"%}" id="mushroom" alt="まっしゅるーむ" draggable="true" ondragstart="f_dragstart(event)" width="100px" height="100px">
+    <img src="{% static "onion.png"%}" id="onion" alt="たまねぎ" draggable="true" ondragstart="f_dragstart(event)" width="100px" height="100px">
+    <img src="{% static "paprika.png"%}" id="paprika" alt="ぱぷりか" draggable="true" ondragstart="f_dragstart(event)" width="100px" height="100px">
+    <img src="{% static "potato2.png"%}" id="potato" alt="じゃがいも" draggable="true" ondragstart="f_dragstart(event)" width="100px" height="100px">
+    <img src="{% static "potatp1.png"%}" id="potato" alt="ぽてと" draggable="true" ondragstart="f_dragstart(event)" width="100px" height="100px">
+    <img src="{% static "ebi.png"%}" id="ebi" alt="えび" draggable="true" ondragstart="f_dragstart(event)" width="100px" height="100px">
+    <img src="{% static "retasu.png"%}" id="retasu" alt="れたす" draggable="true" ondragstart="f_dragstart(event)" width="100px" height="100px">
+    <img src="{% static "ti-zu.png"%}" id="ti-zu" alt="ちーず" draggable="true" ondragstart="f_dragstart(event)" width="100px" height="100px">
+    <img src="{% static "tomato.png"%}" id="tomato" alt="とまと" draggable="true" ondragstart="f_dragstart(event)" width="100px" height="100px">
+<!--インデント一つでズレが生じるから気をつけなんし-->
+</div>
+<style type="text/css">
+div {
+width: 530px;
+height: 120px;
+margin-bottom: 1.5em;
+background-color: #ffffff;
+border: 1px #c0c0c0 solid;
+color: #000000;
+}
+
+
+div.example2 {
+overflow-y: auto;
+}
+
+</style>
+</body>
+</html>
