@@ -1,0 +1,26 @@
+
+<!--create.html=form.html-->
+
+{% load static %}<!--静的ファイルを扱う-->
+<!doctype html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <center><title>{{title}}</title></center>
+        <link rel="stylesheet" type="text/css" href="{% static 'handy/css/style.css' %}"/>
+    </head>
+    <body>
+       
+        <h1>{{  title}}</h1>
+            
+    <table>
+    <form action = "{% url 'user_forms' %}" method = "post">
+    {% csrf_token %}
+    {{ form.as_ul}}
+    <input type = "submit" value = "click">
+    <a href="http://localhost:8000/handy/">トップへ</a>
+        </form>
+        </table>
+       
+    </body>
+</html>

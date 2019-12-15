@@ -1,0 +1,68 @@
+<!--フォーラムの処理１form.py→2view.py→3templateのhandyのhome.html　→4handyのurl.py-->
+
+
+<!--
+ここからホームの作成 
+-->
+
+{% load static%}　　
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">    
+<html>
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+
+<title>handy</title><!--#タブのタイトル-->
+
+<link rel="stylesheet" type="text/css" href="{% 'cp_modal04.css' %"/>
+</head>
+
+<body>
+<!--↓↓ここからサイトの表示部分↓↓-->
+
+
+
+<p><center><font size="7"face="ＭＳ ゴシック">handy</font>
+<input type="search" name="search" size="40" maxlength="20">
+<input type="submit" name="submit" value="検索">
+</center></p>
+
+
+<!--ｓｒｃを押したらhrefに飛ぶ-->
+<a href="http://localhost:8000/handy/HelloForm">
+<img src=" {% static "シルエット.png"%} " alt="次へ"  title="handy" width="150" height="150">
+
+</a>
+<br><p><center>
+<span style="transform: rotate(330deg); display: inline-block;">今月の旬の食材</span>&emsp;&emsp;(12月)・カリフラワー&emsp・大根&emsp;・ながいも<br>&emsp;・はくさい&emsp;・ほうれんそう&emsp;・れんこん
+</center></p>
+
+<br><p><center>
+<p>　　　　　正月　　　　　　　　　　　花見　　　　　　　　　ハロウィン　</p>
+<img src="{% static "正月.png"%}"   width="150" height="150">
+</a>　　　　
+<img src="{% static　"花見.png"%}" alt="桜"  title="桜" width="150" height="150">　　
+<img src="{% static　"ハロウィン.png"%}" alt="ハロウィン"  title="ハロウィン" width="150" height="150">
+<br>　　
+<p>クリスマス　　　　　　　　　お誕生日　　　　　　　　　お弁当</p>
+<img src="{% static　"クリスマス.png"%}" alt="クリスマス"  title="クリスマス" width="150" height="150">　　　　
+<img src="{% static　"お誕生日.png"%}" alt="お誕生日"  title="お誕生日" width="150" height="150">　　　　
+<img src="{% static　"お弁当.png"%}" alt="お弁当"  title="お弁当" width="150" height="150">
+</center></p>
+
+<p><right>
+　　　昨日の閲覧ランキング　　　　　　
+</right></p>
+
+<p><center>
+<br>
+<br>
+<a href="ドラッグ.html"><img src="{% static　"冷蔵庫.png"%}" alt="次へ"title="冷蔵庫" width="200" height="300"></a>
+</center></p>
+
+</div> <!--allの終了タグ-->
+
+</body>
+
+</html>
